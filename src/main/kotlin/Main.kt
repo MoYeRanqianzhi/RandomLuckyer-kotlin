@@ -74,8 +74,6 @@ fun App(
     val survivor = student.toMutableList()
     val rememberSurvivorNumber = remember { mutableIntStateOf(survivor.size) }
     val rememberLuckyer = remember { mutableStateOf("RL") }
-    val survivorNumber by rememberSurvivorNumber
-    val luckyer by rememberLuckyer
 
         Box {
             Luckyer(scope, snack, student, survivor, rememberSurvivorNumber, rememberLuckyer)
@@ -195,7 +193,8 @@ fun main() = application {
         state = windowState,
         undecorated = undecorated,
         transparent = transparent,
-        resizable = false
+        resizable = false,
+        alwaysOnTop = true
     ) {
         MaterialTheme {
             Card(
